@@ -124,7 +124,7 @@ banner = ("""{}
                                                                  /_/{} 
             {}[i] {}https://github.com/LuanDevecchi/postbuilder
 
-                        I hope i helps u {}♥{}                                                        
+                        I hope it helps u {}♥{}                                                        
 
 {}[!] {}Mode 1 - Classic (Simple Post Request)
 
