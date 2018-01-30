@@ -75,10 +75,9 @@ def classicchecking(arg="idk"):
 
     while (i != INT_PARAM):
             THIS_PARAM = input('User param name => ')
-            JUNK += "'" + THIS_PARAM + "'" + ": '" + 'suser' + "',"
+            JUNK += "'" + THIS_PARAM + "'" + ": " + 'suser' + ","
             i += 1
 
-    print('out while.')
     THIS_PARAM = input('Pass param name =>')
     JUNK += " '" + THIS_PARAM + "'" + ": " + 'spass' + "}"
 
