@@ -18,7 +18,7 @@ fkme = (kek + 'n')
 def id_generator(size=6, chars=ascii_uppercase + digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
-def classic(arg='idk'):
+def classic():
     INT_PARAM = int(input(bcolors.OKGREEN + '[+] '+ bcolors.ENDC + 'How many post-params? => '))
     INT_MREQUESTS = int(input(bcolors.OKGREEN + '[+] '+ bcolors.ENDC + 'How many requests? => '))
     URL = input(bcolors.OKGREEN + '[+] '+ bcolors.ENDC + 'Post-Target URL => ')
@@ -61,7 +61,7 @@ while (i != manyrequests):
 
     print(bcolors.OKBLUE + '[+] '+ bcolors.ENDC + 'Wrote script to {}'.format(filename))
 
-def classicchecking(arg="idk"):
+def classicchecking():
     INT_PARAM = int(2)
     TXT_LIST = input('Text List => ')
     TXT_SPLITTER = input('What is between user and pass? (e.g user:pass = :) => ')
