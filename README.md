@@ -11,11 +11,23 @@ Requests Module
 ```
 ### Examples
 
-POST requests in wp-ajax
+```php
+<?php
+
+$usr = $_POST['username'];
+$pss = $_POST['password'];
+
+if($usr=="admin" and $pss=="adminpass123"){
+    echo 'welcome';
+}else{
+    echo 'wrong username or password';
+}
+
+?>
+```
+
 ![Alt Text](https://im4.ezgif.com/tmp/ezgif-4-d666552633.gif)
-```
-For unlimited voting
-```
+
 
 
 ## Authors
