@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 from string import ascii_uppercase,digits
 import random
+
+
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -24,7 +26,6 @@ def classic():
     URL = input(bcolors.OKGREEN + '[+] '+ bcolors.ENDC + 'Post-Target URL => ')
     i = 1
 
-    SHOW = print
 
     JUNK = str("postdata = {")
 
@@ -53,7 +54,6 @@ while (i != manyrequests):
     print(AJAX_POST)
     i+=1
     """.format(INT_MREQUESTS,JUNK,URL))
-    #SHOW(JUNK_POST_DATA)
     rnd = id_generator()
     filename = rnd + ".py" 
     with open(filename, 'a') as out:
@@ -63,22 +63,21 @@ while (i != manyrequests):
 
 def classicchecking():
     INT_PARAM = int(2)
-    TXT_LIST = input('Text List => ')
-    TXT_SPLITTER = input('What is between user and pass? (e.g user:pass = :) => ')
-    LIVE_MSG = input('Confirmation message (e.g "Login Successful") => ')
-    URL = input('Post-Target URL => ')
+    TXT_LIST = input(bcolors.OKGREEN + '[+] '+ bcolors.ENDC +'Text List => ')
+    TXT_SPLITTER = input(bcolors.OKGREEN + '[+] '+ bcolors.ENDC +'What is between user and pass? (e.g user:pass = :) => ')
+    LIVE_MSG = input(bcolors.OKGREEN + '[+] '+ bcolors.ENDC +'Confirmation message (e.g "Login Successful") => ')
+    URL = input(bcolors.OKGREEN + '[+] '+ bcolors.ENDC +'Post-Target URL => ')
     i = 1
 
-    SHOW = print
 
     JUNK = str("postdata = {")
 
     while (i != INT_PARAM):
-            THIS_PARAM = input('User param name => ')
+            THIS_PARAM = input(bcolors.OKGREEN + '[+] '+ bcolors.ENDC +'User param name => ')
             JUNK += "'" + THIS_PARAM + "'" + ": " + 'suser' + ","
             i += 1
 
-    THIS_PARAM = input('Pass param name =>')
+    THIS_PARAM = input(bcolors.OKGREEN + '[+] '+ bcolors.ENDC +'Pass param name =>')
     JUNK += " '" + THIS_PARAM + "'" + ": " + 'spass' + "}"
 
     JUNK_POST_DATA = str("""
@@ -104,13 +103,25 @@ for line in lista:
     else:
         print('fail' + suser + ' ' + spass)
     """.format(TXT_LIST,fkme,TXT_SPLITTER,JUNK,URL,LIVE_MSG))
-    SHOW(JUNK_POST_DATA)
     rnd = id_generator()
     filename = rnd + ".py" 
     with open(filename, 'a') as out:
         out.write(JUNK_POST_DATA)
 
-    print('wrote to {}'.format(filename))
+    print(bcolors.OKBLUE + '[+] '+ bcolors.ENDC + 'Wrote script to {}'.format(filename))
+
+def fakecli():
+    fake_cli = str(input('> '))
+
+
+    if(fake_cli == '1'):
+        print(bcolors.OKGREEN + '[+] '+ bcolors.ENDC +'Classic Mode.')
+        classic()
+    elif(fake_cli == '2'):
+        print(bcolors.OKGREEN + '[+] '+ bcolors.ENDC +'Classic-Checker Mode.')
+        classicchecking()
+    else:
+        fakecli()
 
 banner = ("""{}
 
@@ -131,12 +142,5 @@ banner = ("""{}
 
 """.format(bcolors.HEADER,bcolors.ENDC,bcolors.OKBLUE,bcolors.ENDC,bcolors.WARNING,bcolors.ENDC,bcolors.OKGREEN,bcolors.ENDC,bcolors.OKGREEN,bcolors.ENDC))
 print(banner)
-fake_cli = int(input('> '))
 
-
-if(fake_cli == 1):
-    print(bcolors.OKGREEN + '[+] '+ bcolors.ENDC +'Classic Mode.')
-    classic()
-elif(fake_cli == 2):
-    print(bcolors.OKGREEN + '[+] '+ bcolors.ENDC +'Classic-Checker Mode.')
-    classicchecking()
+fakecli()
