@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import requests
 from string import ascii_uppercase,digits
 import random
 class bcolors:
