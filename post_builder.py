@@ -4,6 +4,7 @@ import random
 
 
 class bcolors:
+    BLUEZ = '\033[34m'
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKGREEN = '\033[92m'
@@ -111,7 +112,7 @@ for line in lista:
     print(bcolors.OKBLUE + '[+] '+ bcolors.ENDC + 'Wrote script to {}'.format(filename))
 
 def fakecli():
-    fake_cli = str(input('> '))
+    fake_cli = str(input('pbuilder> '))
 
 
     if(fake_cli == '1'):
@@ -120,27 +121,32 @@ def fakecli():
     elif(fake_cli == '2'):
         print(bcolors.OKGREEN + '[+] '+ bcolors.ENDC +'Classic-Checker Mode.')
         classicchecking()
+    elif(fake_cli == 'exit' or fake_cli == 'exit()' or fake_cli == 'end'):
+        print(bcolors.OKGREEN + '[+] '+ bcolors.ENDC +'Exiting pbuilder...')
+        exit()
     else:
         fakecli()
 
-banner = ("""{}
 
-  _____          _     ____        _ _     _                     __  
- |  __ \        | |   |  _ \      (_) |   | |            ______  \ \ 
- | |__) |__  ___| |_  | |_) |_   _ _| | __| | ___ _ __  |______|  | |
- |  ___/ _ \/ __| __| |  _ <| | | | | |/ _` |/ _ \ '__|  ______   | |
- | |  | (_) \__ \ |_  | |_) | |_| | | | (_| |  __/ |    |______|  | |
- |_|   \___/|___/\__| |____/ \__,_|_|_|\__,_|\___|_|              | |
-                                                                 /_/{} 
+banner = ("""{}
+           __          _ __    __         
+    ____  / /_  __  __(_) /___/ /__  _____      +---------+
+   / __ \/ __ \/ / / / / / __  / _ \/ ___/      | Version | 
+  / /_/ / /_/ / /_/ / / / /_/ /  __/ /          +---------+
+ / .___/_.___/\__,_/_/_/\__,_/\___/_/           | v0.0.2  |
+/_/                                             +---------+ 
+{} 
+                            
+
             {}[i] {}https://github.com/LuanDevecchi/postbuilder
 
-                        I hope it helps u {}♥{}                                                        
+                        made with {}♥{} in Brazil                                                       
 
 {}[!] {}Mode 1 - Classic (Simple Post Request)
 
 {}[!] {}Mode 2 - Classic-Checker (Simple account:pass)
 
-""".format(bcolors.HEADER,bcolors.ENDC,bcolors.OKBLUE,bcolors.ENDC,bcolors.WARNING,bcolors.ENDC,bcolors.OKGREEN,bcolors.ENDC,bcolors.OKGREEN,bcolors.ENDC))
+""".format(bcolors.BLUEZ,bcolors.ENDC,bcolors.OKBLUE,bcolors.ENDC,bcolors.WARNING,bcolors.ENDC,bcolors.OKGREEN,bcolors.ENDC,bcolors.OKGREEN,bcolors.ENDC))
 print(banner)
 
 fakecli()
