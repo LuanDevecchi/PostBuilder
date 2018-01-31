@@ -11,6 +11,17 @@ Requests Module
 ```
 ### Examples
 
+For account-checking
+
+This is the list.txt
+```
+username1:pass1
+admin:admin
+admin:adminpass123
+username2:pass2
+```
+This is the PHP Script
+
 ```php
 <?php
 
